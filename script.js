@@ -1,10 +1,13 @@
-//your JS code here. If required.
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('loginForm');
     const existingButton = document.getElementById('existing');
+    const usernameField = document.getElementById('username');
+    const passwordField = document.getElementById('password');
+    const checkbox = document.getElementById('checkbox');
 
     // Check for existing user data in local storage
-    if (localStorage.getItem('username') && localStorage.getItem('password')) {
+    const savedUsername = localStorage.getItem('username');
+    if (savedUsername) {
         existingButton.style.display = 'inline';
     }
 
@@ -12,9 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
     form.addEventListener('submit', (e) => {
         e.preventDefault();
 
-        const username = document.getElementById('username').value;
-        const password = document.getElementById('password').value;
-        const rememberMe = document.getElementById('checkbox').checked;
+        const username = usernameField.value;
+        const password = passwordField.value;
+        const rememberMe = checkbox.checked;
 
         if (rememberMe) {
             // Save username and password in local storage
