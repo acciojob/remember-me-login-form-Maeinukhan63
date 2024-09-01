@@ -31,6 +31,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Show alert with login message
         alert(`Logged in as ${username}`);
+        
+        // Update button visibility
+        if (rememberMe) {
+            existingButton.style.display = 'inline';
+        } else {
+            existingButton.style.display = 'none';
+        }
     });
 
     // Handle existing user login
